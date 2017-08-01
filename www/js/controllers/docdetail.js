@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 .controller('DocumentDetailCtrl', function($scope, $stateParams,$ionicHistory, $http, $window, 
-  FileService, DocumentService, FolderService, PublishDocumentService, BackendPath, LoginService,
+  FileService, DocumentService, FolderService, BackendPath, LoginService,
   UserFactory, DocumentFactory, FileFactory, ReviewFactory, FolderFactory, ApproverListFactory) {
   $ionicHistory.nextViewOptions({
     disableBack: true
@@ -26,7 +26,6 @@ angular.module('starter.controllers')
   }
   $scope.publish = function(docId,docName){
       DocumentService.publish(docId);
-      PublishDocumentService.addDocument(docId, docName);
       $window.location.href=('#/app/doc');
   }
   $scope.delete = function(docId){
