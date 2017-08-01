@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('PublishDocumentCtrl', function($scope, $ionicModal, $timeout, $http, 
+.controller('PublishDocumentCtrl', function($scope, $ionicModal, $timeout, $http,
 	BackendPath, FileService,
 	PublishDocumentFactory, UserFactory, FileFactory) {
 	$http.get(BackendPath.publishDocumentServicePath+'/publishDocuments')
@@ -19,16 +19,16 @@ angular.module('starter.controllers')
 					    UserFactory.getUser($scope.doc.creator).then(function(resp){
 					    	if(resp.status == 200){ $scope.doc.creator = resp.data.lastname+" "+resp.data.firstname; }
 					    	else{ $scope.doc.creator = "Service is not available"; }
-					        
+
 					    });
 					    UserFactory.getUser($scope.doc.approver).then(function(resp){
 					        if(resp.status == 200){ $scope.doc.approver = resp.data.lastname+" "+resp.data.firstname; }
 					    	else{ $scope.doc.approver = "Service is not available"; }
 					    });
 					    FileFactory.allFileDetail(docId).then(function(resp){
-				            if(resp.status == 200){               
-				            $scope.files = resp.data; 
-				            $scope.numberOfFiles = $scope.files.length; 
+				            if(resp.status == 200){
+				            $scope.files = resp.data;
+				            $scope.numberOfFiles = $scope.files.length;
 				            $scope.showNone = function(){
 				              return false;
 				            }
@@ -54,7 +54,7 @@ angular.module('starter.controllers')
 				                return true;
 				              }
 				            }
-				            
+
 				          })
 			        	showDetail();
 			        }
@@ -62,15 +62,15 @@ angular.module('starter.controllers')
 			        	console.log(resp)
 			        	showNotFound();
 			        }
-			        
-			        
+
+
 			    });
-			
+
 
           	}
           }
-        	
-            
+
+
         })
         .error(function(data){
           console.log('cannot reach '+BackendPath.publishDocumentServicePath)
@@ -78,7 +78,7 @@ angular.module('starter.controllers')
         });
 
 
-    
+
 
 	var showNotFound = function(){
 		$scope.notFound = function(){
@@ -187,4 +187,3 @@ angular.module('starter.controllers')
 
 
 })
-

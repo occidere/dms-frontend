@@ -7,5 +7,5 @@ angular.module('starter.controllers')
   this.fileServicePath = "http://210.121.158.170:8080";
   this.folderServicePath = "http://210.121.158.166:8081";
   this.publishDocumentServicePath = "http://localhost:8086";
-  this.approverListServicePath = "http://210.121.158.162:8080";
+  this.approverListServicePath = "http://210.121.158.167:8081";
 })
