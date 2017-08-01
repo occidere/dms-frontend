@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 .controller('PublishDocumentCtrl', function($scope, $ionicModal, $timeout, $http, 
 	BackendPath, FileService,
 	PublishDocumentFactory, UserFactory, FileFactory) {
-	$http.get(BackendPath.publishDocumentServicePath+'/publishDocuments')
+	$http.get(BackendPath.publishDocumentServicePath+'/getPublishDocuments')
         .success(function(data){
           if(data.length == 0){
           	showNoDocument();
