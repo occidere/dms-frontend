@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 .controller('PublishDocumentCtrl', function($scope, $ionicModal, $timeout, $http, 
 	BackendPath, FileService,
 	PublishDocumentFactory, UserFactory, FileFactory) {
-	$http.get(BackendPath.publishDocumentServicePath+'/getPublishDocuments')
+	$http.get(BackendPath.documentServicePath+'/getPublishDocuments')
         .success(function(data){
           if(data.length == 0){
           	showNoDocument();
@@ -73,7 +73,7 @@ angular.module('starter.controllers')
             
         })
         .error(function(data){
-          console.log('cannot reach '+BackendPath.publishDocumentServicePath)
+          console.log('cannot reach '+BackendPath.documentServicePath)
           showNoService();
         });
 

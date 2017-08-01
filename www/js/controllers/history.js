@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 .controller('HistoryCtrl', function($scope, $stateParams,$ionicHistory, $http, $window, 
-  LoginService,DocumentService, FolderService, PublishDocumentService, BackendPath,
+  LoginService,DocumentService, FolderService, BackendPath,
   UserFactory, DocumentFactory, FolderFactory) {
   $ionicHistory.nextViewOptions({
     disableBack: true
@@ -52,7 +52,6 @@ angular.module('starter.controllers')
   $scope.publish = function(docId, docName){
     console.log('publish document: '+docId)
     DocumentService.publish(docId)
-    PublishDocumentService.addDocument(docId, docName)
     console.log('change folder status: '+$stateParams.folderId)
     $window.location.href=('#/app/doc');
   }
